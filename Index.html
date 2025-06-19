@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextGen QR Code Generator – AI Powered</title>
+  <meta name="description" content="Generate high-quality QR codes instantly with our AI-powered tool. Mobile and desktop friendly, download ready, and perfect for business or personal use." />
+  <meta name="keywords" content="QR Code Generator, AI QR Code, QR code online, free QR code, responsive QR generator, download QR code, mobile-friendly QR" />
+  <meta name="author" content="NextGen Tools" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <style>
+    body {
+      background: linear-gradient(to right, #141e30, #243b55);
+      font-family: 'Poppins', sans-serif;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .wrapper {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    }
+    .qr-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+    }
+    .qr-type {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.2s ease-in-out;
+    }
+    .qr-type:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+    }
+    .qr-type .icon {
+    margin-right: 8px;
+    font-size: 18px;
+    }
+    .ad-slot {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px dashed #ccc;
+      padding: 12px;
+      text-align: center;
+      font-size: 14px;
+      color: #ccc;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+  <div class="wrapper">
+  <div class="qr-types">
+  <!-- QR Code Types Panel -->
+  <div class="qr-types">
+  <div class="qr-type"><i class="icon">🌐</i> <span>URL</span></div>
+  <div class="qr-type"><i class="icon">📇</i> <span>VCARD</span></div>
+  <div class="qr-type"><i class="icon">🅰️</i> <span>TEXT</span></div>
+  <div class="qr-type"><i class="icon">📧</i> <span>E-MAIL</span></div>
+  <div class="qr-type"><i class="icon">💬</i> <span>SMS</span></div>
+  <div class="qr-type"><i class="icon">📶</i> <span>WIFI</span></div>
+  <div class="qr-type"><i class="icon">₿</i> <span>BITCOIN</span></div>
+  <div class="qr-type"><i class="icon">🐦</i> <span>TWITTER</span></div>
+  <div class="qr-type"><i class="icon">👍</i> <span>FACEBOOK</span></div>
+  <div class="qr-type"><i class="icon">📄</i> <span>PDF</span></div>
+  <div class="qr-type"><i class="icon">🎵</i> <span>MP3</span></div>
+  <div class="qr-type"><i class="icon">🏪</i> <span>APP STORES</span></div>
+  <div class="qr-type"><i class="icon">🖼️</i> <span>IMAGES</span></div>
+  <div class="qr-type"><i class="icon">🔳</i> <span>2D BARCODES</span></div>
+  </div>
+  <div class="glass p-6 sm:p-10 text-white w-full max-w-6xl aspect-auto shadow-lg text-center flex flex-col sm:flex-row sm:justify-between gap-6">
+    
+   
+    <!-- Main Content -->
+    <div class="w-full sm:w-3/4">
+      <h1 class="text-3xl sm:text-4xl font-bold mb-2">⚡ AI-Powered QR Generator</h1>
+      <p class="text-gray-300 text-sm sm:text-base mb-4">Create, preview, and download high-quality QR codes instantly</p>
+
+      <!-- 🟡 Ad 1: Top Banner -->
+      <div class="ad-slot">Ad Slot 1 – Top Banner (728x90)</div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 w-full px-4">
+        <input id="qrText" type="text" placeholder="Enter your URL or text here..."
+          class="p-3 rounded-lg text-black w-full sm:w-2/3 border border-gray-300" />
+        <button onclick="generateQR()" class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition">
+          Generate
+        </button>
+      </div>
+
+      <!-- 🟡 Ad 2: Mid Content -->
+      <div class="ad-slot">Ad Slot 2 – Mid Content (Responsive)</div>
+
+      <div id="qrcode" class="flex justify-center mb-6"></div>
+
+      <a id="downloadLink" href="#" download="qrcode.png"
+        class="hidden mt-4 inline-block bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition">
+        Download QR Code
+      </a>
+
+      <!-- SEO Article -->
+      <div class="mt-8 text-left text-gray-200 px-4 sm:px-10">
+        <h2 class="text-xl font-semibold mb-2">🧠 How This AI-Powered QR Code Generator Helps You</h2>
+        <p class="text-sm leading-relaxed">
+          In a world where speed and technology matter, this AI-powered QR code generator gives you a simple yet advanced way to create QR codes in seconds.
+          Whether you’re a business owner, student, marketer, or content creator — this tool makes sharing links and data visually easy and fast.
+        </p>
+        <p class="text-sm leading-relaxed mt-2">
+          ✅ No login required, completely free<br>
+          ✅ Download QR code instantly<br>
+          ✅ Mobile and desktop responsive<br>
+          ✅ Secure and fast processing<br>
+          ✅ Powered by AI and built for modern browsers
+        </p>
+        <p class="text-sm leading-relaxed mt-2">
+          This site uses modern web standards with Tailwind CSS and AI-enhanced code logic. Its clean and minimal UI ensures the best user experience while keeping performance lightning fast.
+        </p>
+      </div>
+
+      <!-- 🟡 Ad 4: Bottom Article -->
+      <div class="ad-slot">Ad Slot 4 – Bottom (Responsive Banner)</div>
+    </div>
+
+    <!-- 🟡 Ad 3: Sidebar (Desktop Only) -->
+    <div class="hidden sm:block w-full sm:w-1/4">
+      <div class="ad-slot h-full">Ad Slot 3 – Sidebar (Skyscraper)</div>
+    </div>
+
+  </div>
+
+  <script>
+    function generateQR() {
+      const text = document.getElementById('qrText').value;
+      const qrCodeDiv = document.getElementById('qrcode');
+      const downloadLink = document.getElementById('downloadLink');
+      
+      qrCodeDiv.innerHTML = "";
+      if (!text.trim()) {
+        alert("Please enter some text or URL");
+        return;
+      }
+
+      QRCode.toDataURL(text, { width: 300 }, (err, url) => {
+        if (err) return console.error(err);
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = "QR Code";
+        img.classList.add("max-w-full", "h-auto");
+        qrCodeDiv.appendChild(img);
+        downloadLink.href = url;
+        downloadLink.classList.remove("hidden");
+      });
+    }
+  </script>
+
+</body>
+  </html>
